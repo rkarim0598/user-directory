@@ -4,7 +4,10 @@ function changeText() {
     //const muhParagraph = document.querySelector('p.greeting')
     //muhParagraph.textContent = "I must not fear"
     const muhHeader = document.querySelector('#header2')
-    muhHeader.textContent = "He who controls the spice, controls the Universe"
+    const muhtext = document.querySelector('input')
+    const texty = muhtext.value
+    console.log(texty)
+    muhHeader.textContent = texty
 }
 
 button.addEventListener('click', changeText)
@@ -12,7 +15,7 @@ button.addEventListener('click', changeText)
 // Homework
 // MAKE BUTTON CHANGE TEXT OF HEADING (THE <H1>) -- check!
 // ADD MULTIPLE HEADINGS TO THE PAGE AND MAKE THE BUTTON CHANGE THE SECOND ONE -- check!
-// SUPER MEGA BONUS: ADD A FORM TO THE PAGE
-// ADD A TEXT INPUT TO THE FORM
-// UPDATE HEADING WITH THE TEXT THAT YOU TYPE IN THE TEXT INPUT WHEN FORM IS SUBMITTED
+// SUPER MEGA BONUS: ADD A FORM TO THE PAGE -- check
+// ADD A TEXT INPUT TO THE FORM -- check
+// UPDATE HEADING WITH THE TEXT THAT YOU TYPE IN THE TEXT INPUT WHEN FORM IS SUBMITTED -- check
 // 
