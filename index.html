@@ -8,17 +8,24 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <h1 id="header1">User Directory</h1>
-    <h1 id="header2">Jehoshaphat!</h1>
-    <h1 id="header3">A Way that can be followed is not the Way</h1>
-    <p class="greeting">Welcome, friend</p>
-   
-    <form id="formie">
-      <input type="text" class="bar" name="muhtext"><br>
-      <br>
-    </form>
+  <h1>User Directory</h1>
 
-    <div id="users"></div>
-    <script src="index.js"></script>
+  <form id="userForm">
+    <p>
+      <label for="userName">Name</label>
+      <input type="text" name="userName" autofocus>
+    </p>
+
+    <p>
+      <label for="age">Age</label>
+      <input type="text" name="age">
+    </p>
+
+    <button type="submit">Go</button>
+  </form>
+
+  <div id="users"></div>
+
+  <script src="index.js"></script>
 </body>
 </html>
