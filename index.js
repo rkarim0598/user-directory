@@ -2,25 +2,35 @@ const form = document.querySelector('#userForm')
 
 const handleSubmit = function(ev) {
   ev.preventDefault()
-  const users = document.querySelector('#users')
   const f = ev.target
   const userName = f.userName.value
   const age = f.age.value
-  const color = f.favoriteColor.value
-//   const age = f.age.value
-//   users.innerHTML += `<p>${userName}, ${age}</p>`
+  const favoriteColor = f.favoriteColor.value
 
-  // da complicated way that is better
-  const p = document.createElement('p')
-  p.textContent = `${userName}, ${age}`
-  p.style.backgroundColor = color
-  users.appendChild(p)
+  const nameItem = document.createElement('li')
+  nameItem.textContent = `Name: ${userName}`
+
+  const ageItem = document.createElement('li')
+  ageItem.textContent = `Age: ${age}`
+  
+  const colorItem = document.createElement('li')
+  colorItem.textContent = 'Favorito Colour: '
+  const colorDiv = document.createElement('div')
+  colorDiv.style.backgroundColor = favoriteColor
+  colorDiv.style.width = '6rem'
+  colorDiv.style.height = '3rem'
+  colorItem.appendChild(colorDiv)
+
+  const list = document.createElement('ul')
+  list.appendChild(nameItem)
+  list.appendChild(ageItem)
+  list.appendChild(colorItem)
+
+  const users = document.querySelector('#users')
+  users.appendChild(list)
+
   f.reset()
   f.userName.focus()
-//   document.body.style.backgroundColor = color;
-//   document.color = color;
-//   document.bgColor = color;
-
 }
 
 form.addEventListener('submit', handleSubmit)
