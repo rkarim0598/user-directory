@@ -1,9 +1,10 @@
 
 function changeText() {
-    const muhHeader = document.querySelector('#header2')
+    const users = document.querySelector('#users')
   
     const muhtext = document.querySelector('input')
-    muhHeader.textContent = muhtext.value
+    users.textContent += ' ' + muhtext.value
+    muhtext.value = ''
 }
 
 document.getElementById('formie').addEventListener("submit", function(event) {
