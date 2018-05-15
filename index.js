@@ -8,6 +8,12 @@ const renderColor = function(favoriteColor) {
   return colorDiv
 }
 
+const renderListItem = function(stringy, stringySpec) {
+  const tempItem = document.createElement('li')
+  tempItem.textContent = `${stringy}: ${stringySpec}`
+  return tempItem
+}
+
 const handleSubmit = function(ev) {
   ev.preventDefault()
   const f = ev.target
@@ -15,11 +21,9 @@ const handleSubmit = function(ev) {
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
 
-  const nameItem = document.createElement('li')
-  nameItem.textContent = `Name: ${userName}`
+  const nameItem = renderListItem('Name', userName)
 
-  const ageItem = document.createElement('li')
-  ageItem.textContent = `Age: ${age}`
+  const ageItem = renderListItem('Age', age)
 
   colorItem = renderColor(favoriteColor)
 
