@@ -7,8 +7,13 @@ const handleSubmit = function(ev) {
   const userName = f.userName.value
   const age = f.age.value
 //   const age = f.age.value
-  users.innerHTML += `<p>${userName}, ${age}</p>`
+//   users.innerHTML += `<p>${userName}, ${age}</p>`
 
+  // da complicated way that is better
+  const p = document.createElement('p')
+  p.textContent = `${userName}, ${age}`
+
+  users.appendChild(p)
   f.reset()
   f.userName.focus()
 }
