@@ -3,7 +3,7 @@ function changeText() {
     const users = document.querySelector('#users')
   
     const muhtext = document.querySelector('input')
-    users.textContent += ' ' + muhtext.value
+    users.innerHTML += '<p>' + muhtext.value + '</p>'
     muhtext.value = ''
 }
 
