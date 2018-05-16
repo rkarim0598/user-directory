@@ -8,7 +8,7 @@ const loopy = function() {
   if (ncolor >= 16777215) {
     factor = -10
   }
-  if (ncolor <= 000099) {
+  if (ncolor < 000099) {
     factor = 10
   }
   
@@ -17,7 +17,7 @@ const loopy = function() {
   console.log(document.bgColor)
   
  document.bgColor = '#' + ncolor
- loopID = setTimeout("loopy()", 1000)
+ loopID = setTimeout("loopy()", 10)
 }
 loopy()
 

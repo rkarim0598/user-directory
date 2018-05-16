@@ -1,3 +1,4 @@
 body {
     font-family: sans-serif;
+    transition: background .5s;
 }
