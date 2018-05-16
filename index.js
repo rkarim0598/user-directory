@@ -1,5 +1,25 @@
 const form = document.querySelector('#userForm')
 const muhList = []
+var ncolor = 000099
+factor = 10
+const loopy = function() {
+  document.bgColor = '#' + ncolor
+  console.log('hi')
+  if (ncolor >= 16777215) {
+    factor = -10
+  }
+  if (ncolor <= 000099) {
+    factor = 10
+  }
+  
+  ncolor = ncolor + factor
+  console.log(ncolor)
+  console.log(document.bgColor)
+  
+ document.bgColor = '#' + ncolor
+ loopID = setTimeout("loopy()", 1000)
+}
+loopy()
 
 const renderColor = function(favoriteColor) {
   const colorDiv = document.createElement('div')
