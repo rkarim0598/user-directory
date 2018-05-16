@@ -1,17 +1,33 @@
 const form = document.querySelector('#userForm')
+const muhList = []
 
 const renderColor = function(favoriteColor) {
   const colorDiv = document.createElement('div')
   colorDiv.style.backgroundColor = favoriteColor
   colorDiv.style.width = '6rem'
   colorDiv.style.height = '3rem'
+  const colorItem = document.createElement('li')
+  colorItem.textContent = 'Favorite Color: '
+  colorItem.appendChild(colorDiv)
+  muhList.push(colorItem)
   return colorDiv
 }
 
 const renderListItem = function(stringy, stringySpec) {
   const tempItem = document.createElement('li')
   tempItem.textContent = `${stringy}: ${stringySpec}`
+  muhList.push(tempItem)
+  console.log(muhList)
   return tempItem
+}
+
+const renderList = function() {
+  const tempList = document.createElement('ul')
+  var i;
+  for (i = 0; i < muhList.length; i++) {
+    tempList.appendChild(muhList[i])
+  }
+  return tempList
 }
 
 const handleSubmit = function(ev) {
@@ -22,16 +38,10 @@ const handleSubmit = function(ev) {
   const favoriteColor = f.favoriteColor.value
 
   const nameItem = renderListItem('Name', userName)
-
   const ageItem = renderListItem('Age', age)
+  const colorItem = renderColor(favoriteColor)
 
-  colorItem = renderColor(favoriteColor)
-
-  const list = document.createElement('ul')
-  list.appendChild(nameItem)
-  list.appendChild(ageItem)
-  list.appendChild(colorItem)
-
+  const list = renderList()
   const users = document.querySelector('#users')
   users.appendChild(list)
 
