@@ -21,18 +21,16 @@ const renderListItem = function(stringy, stringySpec) {
   return tempItem
 }
 
-const renderList = function() {
-  const tempList = document.createElement('ul')
-  var i;
-  for (i = 0; i < muhList.length; i++) {
-    tempList.appendChild(muhList[i])
-  }
-  return tempList
+const MONGOL_MONTAGE_YAAAAAA = function() {
+  const muhFrame = document.createElement('iframe')
+  muhFrame.src = "https://youtube.com/embed/ofFCb2modMk?autoplay=1&loop=1&playlist=ofFCb2modMk"
+  muhFrame.width="560"
+  muhFrame.height="315"
+  muhFrame.allowFullscreen
+  muhFrame.frameBorder="0"
+  return muhFrame
 }
-
-const handleSubmit = function(ev) {
-  ev.preventDefault()
-  const f = ev.target
+const renderList = function(f) {
   const userName = f.userName.value
   const age = f.age.value
   const favoriteColor = f.favoriteColor.value
@@ -40,8 +38,25 @@ const handleSubmit = function(ev) {
   const nameItem = renderListItem('Name', userName)
   const ageItem = renderListItem('Age', age)
   const colorItem = renderColor(favoriteColor)
+  
+  const muhFrame = MONGOL_MONTAGE_YAAAAAA()
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/JE37e1eK2mY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  const tempList = document.createElement('ul')
+  var i;
+  for (i = 0; i < muhList.length; i++) {
+    tempList.appendChild(muhList[i])
+  }
+  tempList.appendChild(muhFrame)
+  return tempList
+}
 
-  const list = renderList()
+const handleSubmit = function(ev) {
+  ev.preventDefault()
+  const f = ev.target
+
+ 
+
+  const list = renderList(f)
   const users = document.querySelector('#users')
   users.appendChild(list)
 
